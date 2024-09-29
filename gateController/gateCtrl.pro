@@ -20,11 +20,11 @@ CONFIG += qt\
 
 HEADERS += \
 		visual.h \
-#			udpV2.h \
+			udpV2.h \
 
 SOURCES += \
 		visual.cpp \
-#			 udpV2.cpp \
+			 udpV2.cpp \
                main.cpp
 
 FORMS += \
