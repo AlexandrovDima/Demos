@@ -9,6 +9,7 @@
 #include <QDebug>
 
 	#include "visual.h"
+	#include "udpV2.h"
 
 visual::visual(char* fullpath) {
 #ifdef MARKERS
