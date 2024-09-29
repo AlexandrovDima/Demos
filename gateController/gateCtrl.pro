@@ -6,6 +6,8 @@ TEMPLATE = app
 TARGET = gateCtrl
 DEPENDPATH += .
 
+DEFINES += MARKERS
+
 QT += core\
         gui\
         network\
@@ -17,11 +19,11 @@ CONFIG += qt\
 		  static
 
 HEADERS += \
-#		visuals.h \
+		visual.h \
 #			udpV2.h \
 
 SOURCES += \
-#		visuals.cpp \
+		visual.cpp \
 #			 udpV2.cpp \
                main.cpp
 
@@ -33,13 +35,6 @@ unix {
   MOC_DIR = temp/.moc
   OBJECTS_DIR = temp/.obj
   OBJECTS_DIR = temp/.o
-}
-
-win64 {
-  UI_DIR = temp/ui
-  MOC_DIR = temp/moc
-  OBJECTS_DIR = temp/obj
-  OBJECTS_DIR = temp/o
 }
 
 win32 {
