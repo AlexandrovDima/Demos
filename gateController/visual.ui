@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>470</width>
-    <height>74</height>
+    <width>515</width>
+    <height>150</height>
    </rect>
   </property>
   <property name="sizePolicy">
@@ -16,10 +16,16 @@
     <verstretch>0</verstretch>
    </sizepolicy>
   </property>
+  <property name="minimumSize">
+   <size>
+    <width>515</width>
+    <height>150</height>
+   </size>
+  </property>
   <property name="maximumSize">
    <size>
-    <width>470</width>
-    <height>75</height>
+    <width>600</width>
+    <height>170</height>
    </size>
   </property>
   <property name="windowTitle">
@@ -59,12 +65,28 @@
        </widget>
       </item>
       <item>
-       <widget class="QLabel" name="l_iam__tryset">
+       <widget class="QLabel" name="l_iam_tryset">
         <property name="text">
          <string>---</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <widget class="QGroupBox" name="groupBox">
+     <property name="title">
+      <string>Состояние сокета</string>
+     </property>
+     <layout class="QHBoxLayout" name="horizontalLayout_2">
+      <item>
+       <widget class="QLabel" name="l_soc_stay">
+        <property name="text">
+         <string>---</string>
         </property>
        </widget>
       </item>

@@ -6,7 +6,9 @@ TEMPLATE = app
 TARGET = gateCtrl
 DEPENDPATH += .
 
-DEFINES += MARKERS
+#DEFINES += MARKERS
+DEFINES += WIN
+DEFINES += QT6
 
 QT += core\
         gui\
@@ -20,11 +22,11 @@ CONFIG += qt\
 
 HEADERS += \
 		visual.h \
-#			udpV2.h \
+			udpV2.h \
 
 SOURCES += \
 		visual.cpp \
-#			 udpV2.cpp \
+			 udpV2.cpp \
                main.cpp
 
 FORMS += \
