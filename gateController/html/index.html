@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>My Project: Main Page</title>
+<title>gateController: There native gate controller with async mode commander unit via UDP Socket</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,8 +25,9 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">My Project
+   <div id="projectname">gateController<span id="projectnumber">&#160;1.0.0.2</span>
    </div>
+   <div id="projectbrief">Native gate controller</div>
   </td>
  </tr>
  </tbody>
@@ -83,10 +84,20 @@ $(function(){ initResizable(false); });
 </div>
 </div>
 
-<div class="header">
-  <div class="headertitle"><div class="title">My Project Documentation</div></div>
+<div><div class="header">
+  <div class="headertitle"><div class="title">There native gate controller with async mode commander unit via UDP Socket </div></div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><p><a class="anchor" id="md_readme"></a></p>
+<p>Compilation tested on &lt;Win10x64 @ qt-6.7&gt; &lt;AstraLinux @ qt-5.11&gt;</p>
+<p>Unit commands type: </p><pre class="fragment">0xfa - command to set the mode
+0xfb - command to ask the current mode
+</pre><p>Unit commands special variables: </p><pre class="fragment">0xcc - open the gate
+0xdd - close the gate
+</pre><p>Inut command overal appear: </p><pre class="fragment">&lt;0xff - constant&gt;&lt;unit_commands_type&gt;&lt;commands_special_variable&gt;&lt;0xff - constant&gt;
+</pre><p> if unit_commands_type = 0xfb then commands_special_variable is ignored by the gates</p>
+<p>Unit get request from gates only by command with 0xfb - type: </p><pre class="fragment">&lt;0xff - constant&gt;&lt;0xff - constant&gt;&lt;commands_special_variable&gt;&lt;0xff - constant&gt;
+</pre> </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>
 </div><!-- contents -->
 <!-- start footer part -->
