@@ -1,0 +1,59 @@
+\doxysection{visual Class Reference}
+\hypertarget{classvisual}{}\label{classvisual}\index{visual@{visual}}
+Inheritance diagram for visual\+:\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[height=2.000000cm]{classvisual}
+\end{center}
+\end{figure}
+\doxysubsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classvisual_a69c2ba5ce930104f7b70450ba78e4eed}{visual}} (char \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\Hypertarget{classvisual_ac466c167699e34be4f2673ce12f466c1}\label{classvisual_ac466c167699e34be4f2673ce12f466c1} 
+\+::\+Ui\+::visual {\bfseries ui}
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classvisual_af3543cc4ebfc0038b0ed7f184224e573}{timer\+Event}} (QTimer\+Event \texorpdfstring{$\ast$}{*})
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\Hypertarget{classvisual_a69c2ba5ce930104f7b70450ba78e4eed}\index{visual@{visual}!visual@{visual}}
+\index{visual@{visual}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{visual()}{visual()}}
+{\footnotesize\ttfamily \label{classvisual_a69c2ba5ce930104f7b70450ba78e4eed} 
+visual\+::visual (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}}]{fullpath}{}\end{DoxyParamCaption})}
+
+Конструктор 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em \texorpdfstring{$\ast$}{*}fullpath} & параметр передаваемый как -\/(char\texorpdfstring{$\ast$}{*}) argv\mbox{[}0\mbox{]}-\/ для определения местоположения исполняемого файла \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\Hypertarget{classvisual_af3543cc4ebfc0038b0ed7f184224e573}\index{visual@{visual}!timerEvent@{timerEvent}}
+\index{timerEvent@{timerEvent}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{timerEvent()}{timerEvent()}}
+{\footnotesize\ttfamily \label{classvisual_af3543cc4ebfc0038b0ed7f184224e573} 
+void visual\+::timer\+Event (\begin{DoxyParamCaption}\item[{QTimer\+Event \texorpdfstring{$\ast$}{*}}]{event}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [protected]}}
+
+Обработчик сигналов таймера
+
+таймер маркированый $<$blink\+Id$>$ обеспечивает мигание индикации на визуальной форме
+
+таймер маркированый $<$loop\+Id$>$ ожидание перед началом опроса текущего режима работы ворот 30 сек
+
+таймер маркированый $<$button\+Id$>$ задержка после которой будет выполнена повторная отправка команда к воротам используется в случае если ворота не в требуемом режиме 
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{visual_8h}{visual.\+h}}\item 
+\mbox{\hyperlink{visual_8cpp}{visual.\+cpp}}\end{DoxyCompactItemize}

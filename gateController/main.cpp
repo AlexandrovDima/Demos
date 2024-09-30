@@ -1,11 +1,5 @@
-//#include <stdexcept>
-//#include <Qt>
-//#include <QtGui>
-//#include <QDebug>
-//#include <QtGlobal>
 #include <QDebug>
 #include <QApplication>
-#include <QScreen>
 #include <QGuiApplication>
 
 #include "visual.h"
