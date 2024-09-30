@@ -14,7 +14,7 @@
 
 #define BUTTONTIMEOUT 750
 #define COMMANDLOOP 30000 ///~30sec
-#define BLIKTIMER 500 ///~30sec
+#define BLIKTIMER 500 
 
 visual::visual(char* fullpath) {
 #ifdef MARKERS
