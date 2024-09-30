@@ -1,7 +1,7 @@
 ###There native gate controller with async mode commander unit via UDP Socket###
 
-Compilation tested on: 	<Win10x64 @ qt-6.7>
-						<AstraLinux 1.6 @ qt-5.11>
+Compilation tested on <Win10x64 @ qt-6.7> <AstraLinux @ qt-5.11>
+
 
 Unit commands type:
 

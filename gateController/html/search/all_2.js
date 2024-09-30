@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['drop_0',['drop',['../class_udp__sock.html#a5c26e877d34512b84bcaeed69be152fb',1,'Udp_sock']]]
+  ['commander_20unit_20via_20udp_20socket_0',['There native gate controller with async mode commander unit via UDP Socket',['../md_readme.html',1,'']]],
+  ['controller_20with_20async_20mode_20commander_20unit_20via_20udp_20socket_1',['There native gate controller with async mode commander unit via UDP Socket',['../md_readme.html',1,'']]]
 ];

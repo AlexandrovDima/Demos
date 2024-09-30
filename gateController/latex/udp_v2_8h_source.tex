@@ -1,71 +1,67 @@
 \doxysection{udp\+V2.\+h}
-\hypertarget{udp_v2_8h_source}{}\label{udp_v2_8h_source}
+\hypertarget{udp_v2_8h_source}{}\label{udp_v2_8h_source}\mbox{\hyperlink{udp_v2_8h}{Go to the documentation of this file.}}
 \begin{DoxyCode}{0}
-\DoxyCodeLine{00001\ \textcolor{comment}{/*\ udpV2.h}}
-\DoxyCodeLine{00002\ \textcolor{comment}{\ *}}
-\DoxyCodeLine{00003\ \textcolor{comment}{\ *\ \ Created\ on:\ 25.09.2018}}
-\DoxyCodeLine{00004\ \textcolor{comment}{\ *\ \ Author:\ alx}}
-\DoxyCodeLine{00005\ \textcolor{comment}{\ */}}
-\DoxyCodeLine{00006\ }
-\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#ifndef\ UD\_SOC}}
-\DoxyCodeLine{00008\ \textcolor{preprocessor}{\#define\ UD\_SOC}}
-\DoxyCodeLine{00009\ }
-\DoxyCodeLine{00010\ \textcolor{preprocessor}{\#include\ <QUdpSocket>}}
-\DoxyCodeLine{00011\ \textcolor{preprocessor}{\#include\ <QHostAddress>}}
-\DoxyCodeLine{00012\ \textcolor{preprocessor}{\#include\ <QAbstractSocket>}}
-\DoxyCodeLine{00013\ \textcolor{preprocessor}{\#include\ <QNetworkInterface>}}
-\DoxyCodeLine{00014\ }
-\DoxyCodeLine{00015\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_udp__sock}{Udp\_sock}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
-\DoxyCodeLine{00016\ }
-\DoxyCodeLine{00017\ \ \ \ \ Q\_OBJECT}
-\DoxyCodeLine{00018\ }
-\DoxyCodeLine{00019\ \textcolor{keyword}{private}:}
-\DoxyCodeLine{00020\ QUdpSocket*\ USoc;}
-\DoxyCodeLine{00021\ QUdpSocket*\ senDsocket;}
-\DoxyCodeLine{00022\ QUdpSocket*\ receivEsocket;}
-\DoxyCodeLine{00023\ QList\ <QPair\ <QByteArray,QList<int>\ >\ >*\ \ frames\_to\_go;}
-\DoxyCodeLine{00024\ QHostAddress\ ipaddress;}
-\DoxyCodeLine{00025\ QHostAddress\ ipremaddress;}
-\DoxyCodeLine{00026\ QHostAddress\ multicastIp;}
-\DoxyCodeLine{00027\ quint16\ lport;}
-\DoxyCodeLine{00028\ quint16\ remport;}
-\DoxyCodeLine{00029\ \textcolor{keywordtype}{int}\ globalDescriptor;}
-\DoxyCodeLine{00030\ }
-\DoxyCodeLine{00031\ QByteArray\ datacontainer;}
-\DoxyCodeLine{00032\ }
-\DoxyCodeLine{00033\ \textcolor{keywordtype}{void}\ mulicastSet(QHostAddress,\ \textcolor{keywordtype}{bool});}
-\DoxyCodeLine{00034\ }
-\DoxyCodeLine{00035\ \textcolor{keyword}{public}:}
-\DoxyCodeLine{00036\ QString\ target\_rec\_ip;}
-\DoxyCodeLine{00037\ QString\ target\_rec\_port;}
-\DoxyCodeLine{00038\ \textcolor{keywordtype}{bool}\ bindresult;}
-\DoxyCodeLine{00039\ \textcolor{keywordtype}{bool}\ miltisend;}
-\DoxyCodeLine{00040\ \textcolor{keywordtype}{bool}\ multirec;}
-\DoxyCodeLine{00041\ quint16\ multicount;}
-\DoxyCodeLine{00042\ \mbox{\hyperlink{class_udp__sock}{Udp\_sock}}(QString,\ QString,\ QString,\ QString);}
-\DoxyCodeLine{00043\ }
-\DoxyCodeLine{00044\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_a5c26e877d34512b84bcaeed69be152fb}{drop}}();}
-\DoxyCodeLine{00045\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_aff0d9024ce029cb9ec0b4891d6a67df5}{rise}}(QString,\ QString,\ QString);}
-\DoxyCodeLine{00046\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_udp__sock_a8e7bc6feb321bc3dcf5c02c5655b071a}{\string~Udp\_sock}}();}
-\DoxyCodeLine{00047\ }
-\DoxyCodeLine{00048\ \textcolor{keyword}{private}\ slots:}
-\DoxyCodeLine{00049\ \textcolor{preprocessor}{\#ifndef\ QT6}}
-\DoxyCodeLine{00050\ \ \ \ \ \textcolor{keywordtype}{void}\ socketSayError(QAbstractSocket::SocketError);}
-\DoxyCodeLine{00051\ \textcolor{preprocessor}{\#endif}}
-\DoxyCodeLine{00052\ \ \ \ \ \textcolor{keywordtype}{void}\ sockConnected();}
-\DoxyCodeLine{00053\ \ \ \ \ \textcolor{keywordtype}{void}\ sockDisconnected();}
-\DoxyCodeLine{00054\ \ \ \ \ \textcolor{keywordtype}{void}\ reading();}
-\DoxyCodeLine{00055\ }
-\DoxyCodeLine{00056\ \textcolor{keyword}{public}\ slots:}
-\DoxyCodeLine{00057\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_a76ba57a34e356d673815dd2f60bda497}{sending}}(QByteArray,QString,quint16);}
-\DoxyCodeLine{00058\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_a76ba57a34e356d673815dd2f60bda497}{sending}}(QByteArray);}
-\DoxyCodeLine{00059\ }
-\DoxyCodeLine{00060\ \ \ \ \ signals:}
-\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ dataIncome(QByteArray,\ QHostAddress,\ quint16);}
-\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ dataIncome(QByteArray,\ QString,\ quint16);}
-\DoxyCodeLine{00063\ }
-\DoxyCodeLine{00064\ \};\ \textcolor{comment}{//clasout}}
-\DoxyCodeLine{00065\ }
-\DoxyCodeLine{00066\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00001\ }
+\DoxyCodeLine{00015\ \textcolor{preprocessor}{\#ifndef\ UD\_SOC}}
+\DoxyCodeLine{00016\ \textcolor{preprocessor}{\#define\ UD\_SOC}}
+\DoxyCodeLine{00017\ }
+\DoxyCodeLine{00018\ \textcolor{preprocessor}{\#include\ <QUdpSocket>}}
+\DoxyCodeLine{00019\ \textcolor{preprocessor}{\#include\ <QHostAddress>}}
+\DoxyCodeLine{00020\ \textcolor{preprocessor}{\#include\ <QAbstractSocket>}}
+\DoxyCodeLine{00021\ \textcolor{preprocessor}{\#include\ <QNetworkInterface>}}
+\DoxyCodeLine{00022\ }
+\DoxyCodeLine{00023\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_udp__sock}{Udp\_sock}}\ :\ \textcolor{keyword}{public}\ QObject\ \{}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ \ \ \ \ Q\_OBJECT}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00028\ }
+\DoxyCodeLine{00029\ QUdpSocket*\ USoc;\ \ \ \ \ \ \ }
+\DoxyCodeLine{00030\ QUdpSocket*\ receivEsocket;\ }
+\DoxyCodeLine{00031\ QHostAddress\ ipaddress;\ \ \ \ \ }
+\DoxyCodeLine{00032\ QHostAddress\ ipremaddress;\ }
+\DoxyCodeLine{00033\ QHostAddress\ multicastIp;\ \ \ }
+\DoxyCodeLine{00034\ quint16\ lport;\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00035\ quint16\ remport;\ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00036\ \textcolor{comment}{//int\ globalDescriptor;}}
+\DoxyCodeLine{00037\ }
+\DoxyCodeLine{00038\ }
+\DoxyCodeLine{00039\ \textcolor{keywordtype}{void}\ multicastSet(QHostAddress,\ \textcolor{keywordtype}{bool});}
+\DoxyCodeLine{00040\ }
+\DoxyCodeLine{00041\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00042\ }
+\DoxyCodeLine{00043\ \textcolor{comment}{//QString\ target\_rec\_ip;\ \ \ \ ///\ <\ Переменная\ для\ хранения\ значения\ IP\ адреса\ на\ который\ выполняется\ передача\ пакетов\ по\ умолчанию}}
+\DoxyCodeLine{00044\ \textcolor{comment}{//QString\ target\_rec\_port;\ \ ///\ <\ Переменная\ для\ хранения\ значения\ порта\ на\ который\ выполняется\ передача\ пакетов\ по\ умолчанию}}
+\DoxyCodeLine{00045\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_udp__sock_a92028f7238a9a0d2299a1905c461305e}{bindresult}};\ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00046\ \textcolor{comment}{//bool\ miltisend;\ \ \ \ \ \ \ }}
+\DoxyCodeLine{00047\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_udp__sock_aad0e2c302d3967e55220ff3ee207e917}{multirec}};\ \ \ \ \ \ \ \ \ \ \ \ \ \ }
+\DoxyCodeLine{00048\ quint16\ \mbox{\hyperlink{class_udp__sock_afe6e51a73c273c7c1bccfa731dc1970c}{multicount}};\ \ \ \ \ \ \ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ \mbox{\hyperlink{class_udp__sock_ab04e55ac971f3dcc9dfec825d41ec568}{Udp\_sock}}(QString,\ QString,\ QString,\ QString);}
+\DoxyCodeLine{00051\ }
+\DoxyCodeLine{00052\ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_udp__sock}{\string~Udp\_sock}}();}
+\DoxyCodeLine{00053\ }
+\DoxyCodeLine{00054\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_a5c26e877d34512b84bcaeed69be152fb}{drop}}();}
+\DoxyCodeLine{00055\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_aff0d9024ce029cb9ec0b4891d6a67df5}{rise}}(QString,\ QString,\ QString);}
+\DoxyCodeLine{00056\ }
+\DoxyCodeLine{00057\ \textcolor{keyword}{private}\ slots:}
+\DoxyCodeLine{00058\ \textcolor{preprocessor}{\#ifndef\ QT6}}
+\DoxyCodeLine{00059\ \ \ \ \ \textcolor{keywordtype}{void}\ socketSayError(QAbstractSocket::SocketError);}
+\DoxyCodeLine{00060\ \textcolor{preprocessor}{\#endif}}
+\DoxyCodeLine{00061\ \ \ \ \ \textcolor{keywordtype}{void}\ sockConnected();}
+\DoxyCodeLine{00062\ \ \ \ \ \textcolor{keywordtype}{void}\ sockDisconnected();}
+\DoxyCodeLine{00063\ \ \ \ \ \textcolor{keywordtype}{void}\ reading();}
+\DoxyCodeLine{00064\ }
+\DoxyCodeLine{00065\ \textcolor{keyword}{public}\ slots:}
+\DoxyCodeLine{00066\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_a76ba57a34e356d673815dd2f60bda497}{sending}}(QByteArray,QString,quint16);}
+\DoxyCodeLine{00067\ \ \ \ \ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_udp__sock_a76ba57a34e356d673815dd2f60bda497}{sending}}(QByteArray);}
+\DoxyCodeLine{00068\ }
+\DoxyCodeLine{00069\ signals:}
+\DoxyCodeLine{00070\ \ \ \ \ \textcolor{keywordtype}{void}\ dataIncome(QByteArray,\ QHostAddress,\ quint16);}
+\DoxyCodeLine{00071\ \ \ \ \ \textcolor{keywordtype}{void}\ dataIncome(QByteArray,\ QString,\ quint16);}
+\DoxyCodeLine{00072\ }
+\DoxyCodeLine{00073\ \};\ \textcolor{comment}{//clasout}}
+\DoxyCodeLine{00074\ }
+\DoxyCodeLine{00075\ \textcolor{preprocessor}{\#endif}}
 
 \end{DoxyCode}

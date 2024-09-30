@@ -1,4 +1,4 @@
-#############There native gate controller with async mode commander unit via UDP Socket#######################
+###There native gate controller with async mode commander unit via UDP Socket###
 
 compilation tested on Win10x64@qt-6.7
 
