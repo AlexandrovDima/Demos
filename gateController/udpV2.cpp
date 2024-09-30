@@ -1,35 +1,25 @@
-/*! 
-*	\file
-* 	\brief udpV2.cpp
+/* udpV2.cpp
  *
- *  \date 25.09.2018
- *  \author alx
- *	
+ *  Created on: 25.09.2018
+ *  Author: alx
  */
- 
-#include "udpV2.h"
 
-/*!
-Конструктор
-\param[in] ip значение IP адреса для приема данных используется для BIND
-\param[in] locp значение порта для приема данных используется для BIND
-\param[in] remp значение порта получателя пакета
-\param[in] remaddr значение IP адреса получателя пакета
-*/
+#include "udpV2.h"
 
 Udp_sock::Udp_sock(QString ip, QString locp, QString remp, QString remaddr) {
 #ifdef MARKERS
-qDebug() << "Udp_sock::Udp_sock(QString ip, QString locp, QString remp)********work** " << ip << " -locp- "<< locp<<" -remp- "<<remp;
+qDebug() << "Udp_sock::Udp_sock(QString ip, QString locp, QString remp)********work** " << ip << " "<< locp<<"  "<<remp;
 #endif
 bindresult = false;
 multirec = false;
-//miltisend = false;
+miltisend = false;
+senDsocket = NULL;
+frames_to_go = NULL;
 receivEsocket = NULL;
 multicount=0;
-
 USoc = new QUdpSocket();
-receivEsocket = new QUdpSocket();
 
+receivEsocket = new QUdpSocket();
 	this->ipaddress.setAddress(ip);
 	this->lport = (quint16)locp.toUInt();
 	this->remport = (quint16)remp.toUInt();
@@ -50,18 +40,14 @@ qDebug() << " Udp_sock::Udp_sock(QString ip, QString locp, QString remp)********
     QObject::connect(receivEsocket, SIGNAL(error(QAbstractSocket::SocketError)), this, SLOT(socketSayError(QAbstractSocket::SocketError)));
 #endif
 //USoc->setSocketDescriptor(globalDescriptor);
-}//Constructor
+} ///constr
 
 Udp_sock::~Udp_sock() {
+if (senDsocket) senDsocket->~QUdpSocket();
 drop();
 receivEsocket->~QUdpSocket();
 USoc->~QUdpSocket();
-}//Destructor
-
-/*!
-Остановить работающий сокет не прибегая к деструктору для смены параметров
-\warning состояние mulicast on/off сохраняется
-*/
+}///func
 
 void Udp_sock::drop() {
 #ifdef MARKERS
@@ -83,7 +69,7 @@ QObject::disconnect(receivEsocket, SIGNAL(error(QAbstractSocket::SocketError)), 
 #endif
 if (multirec) {
     //receivEsocket->leaveMulticastGroup(this->multicastIp);
-    multicastSet(this->multicastIp, false);
+    mulicastSet(this->multicastIp, false);
     multicount=0;
 }
 receivEsocket->close();
@@ -94,15 +80,7 @@ multirec = false;
 #ifdef MARKERS
 qDebug()<<"*************************void Udp_sock::drop() { ---ends";
 #endif
-}//func
-
-/*!
-Пробудить сокет с новыми параметрами не прибегая к деструктору для смены параметров
-\param[in] ip {новое значение IP адреса для приема данных}
-\param[in] port {новое значение порта для приема данных, используется для  BIND сокета}
-\param[in] multicast_ip {новое значение IP адреса для вхождения в multicast группу - если multicast не используется - любой валидный IP адрес}
-\warning используется текущий режим mulicast on/off
-*/
+} ///func
 
 void Udp_sock::rise(QString ip, QString port, QString multicast_ip) {
 #ifdef MARKERS
@@ -130,11 +108,11 @@ qDebug()<<"void Udp_sock::rise(QString ip, QString port) { *******  " << ip <<  
             qDebug() << " ------------------------- unicast bind " << bindresult;
 			#endif
         }
-//open multibind
+///open multibind
 if (bindresult) {
-    multicastSet(multicIp, true);
+    mulicastSet(multicIp, true);
 } //if bindresult
-//open multi
+///open multi
         this->ipaddress = causeip;
         this->lport = digitport;
         if (multirec) this->multicastIp = multicIp;
@@ -143,22 +121,18 @@ if (bindresult) {
 qDebug()<<"bindresult ***********" << bindresult;  
 qDebug()<<"multicast ***********" << multirec;
 #endif
-} //func
+} ///func
 
-/*!
-Установка режима multicast
-\param[in] multicIp {значение multicast адреса \warning предусмотрена проверка диаппазона адреса}
-\param[in] turnOn {включение режима multicast}
-*/
-void Udp_sock::multicastSet(QHostAddress multicIp, bool turnOn) {
+void Udp_sock::mulicastSet(QHostAddress multicIp, bool turnOn) {
 #ifdef MARKERS
-qDebug()<<"void Udp_sock::multicastSet(QHostAddress multicIp, bool turnOn) { -turnOn- " << turnOn;
+qDebug()<<" *********** void Udp_sock::mulicastSet(bool turnOn) { " << turnOn;
 #endif
-bool dasmulti;
+    bool dasmulti;
 QList<QNetworkInterface> ifaces = QNetworkInterface::allInterfaces();
     foreach (QNetworkInterface oneface, ifaces) {
         QNetworkInterface::InterfaceFlags flgs = oneface.flags();
 if (oneface.isValid() && !flgs.testFlag(QNetworkInterface::IsLoopBack) && flgs.testFlag(QNetworkInterface::CanMulticast) && flgs.testFlag(QNetworkInterface::IsRunning)) {
+    qDebug() << " mulicastSet 2 ";
                 foreach(QNetworkAddressEntry addr, oneface.addressEntries() ) {
                     //if (addr.ip() == causeip) {
                             if (addr.ip().protocol() == QAbstractSocket::IPv4Protocol) {
@@ -190,13 +164,8 @@ if (oneface.isValid() && !flgs.testFlag(QNetworkInterface::IsLoopBack) && flgs.t
 #ifdef MARKERS
 qDebug()<<" leaving/joining count " << multicount;
 #endif
-} //fucn
+} ///fucn
 
-/*!
-*
-*Чтение данных из UDP сокета - вызывает - emit dataIncome(...
-*
-*/
 void Udp_sock::reading() {
 #ifdef MARKERS
 qDebug()<<"*************************Udp_sock::reading() {";
@@ -207,12 +176,7 @@ QByteArray arr;
 arr.resize(receivEsocket->pendingDatagramSize());
 receivEsocket->readDatagram(arr.data(), arr.size(),&fromip, &fromport);
 emit dataIncome(arr, fromip.toString(), fromport);
-} //func
-
-/*!
-Отправка данных в UDP сокет на основе адресных данных переданных в конструкторе
-\param[in] out {данные для отправки в сокет}
-*/
+} ///func
 
 void Udp_sock::sending(QByteArray out) {
 #ifdef MARKERS
@@ -223,14 +187,7 @@ qDebug()<<"**void Udp_sock::sending(QByteArray out) { **works   from" << this->i
 #else
 		USoc->writeDatagram(out.constData(), out.size(), ipremaddress, remport);
 #endif
-} //func
-
-/*!
-Отправка данных в UDP сокет
-\param[in] out {QByteArray - который необходимо отправить с сокет}
-\param[in] remip {IP адрес получателя}
-\param[in] nowport {Порт получателя}
-*/
+} ///func
 
 void Udp_sock::sending(QByteArray out, QString remip, quint16 nowport) {
 #ifdef MARKERS
@@ -247,37 +204,24 @@ receivEsocket->writeDatagram(out.constData(), out.size(), nowip, nowport);
 #ifdef MARKERS
 qDebug()<<"sending message to " << remip << " size is..... " << howmany << " From ip" << receivEsocket->localAddress().toString() << " From Port " << receivEsocket->localPort();
 #endif
-} //func
+} ///func
 
 #ifndef QT6
-/*!
-Индикация ошибок предусмотренных классом QUdpSocket
-\param[in] err {код ошибки}
-*/
-
 void Udp_sock::socketSayError(QAbstractSocket::SocketError err) {
 #ifdef MARKERS
 qDebug() <<"************************Udp_sock::socketSayError errorNum " << err;
 #endif
-} //func
+} ///func
 #endif
-
-/*!
-Индикация при сигнале сокета - connected() \warning для тестирования
-*/
 
 void Udp_sock::sockConnected() {
 #ifdef MARKERS
-qDebug()<<"void Udp_sock::sockConnected() { ";
+qDebug()<<"*************************Udp_sock::sockConnected() { ";
 #endif
-} //func
-
-/*!
-Индикация при сигнале сокета - disconnected() \warning для тестирования
-*/
+} ///func
 
 void Udp_sock::sockDisconnected() {
 #ifdef MARKERS
-qDebug()<<"void Udp_sock::sockDisconnected() {";
+qDebug()<<"*************************Udp_sock::sockDisconnected() {";
 #endif
-} //func
+} ///func

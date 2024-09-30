@@ -1,9 +1,8 @@
-/*!
-* \file
- * \brief visual.cpp
+/*
+ * visual.cpp
  *
- *  \date 29.09.2024
- *  \author Alx
+ *  Created on: 29.09.2024
+ *      Author: Alx
  *
 */
 
@@ -17,14 +16,9 @@
 #define COMMANDLOOP 30000 ///~30sec
 #define BLIKTIMER 500 
 
-/*!
-Конструктор
-\param[in] *fullpath параметр передаваемый как -(char*) argv[0]- для определения местоположения исполняемого файла
-*/
-
-visual::visual(char *fullpath) {
+visual::visual(char* fullpath) {
 #ifdef MARKERS
-qDebug() << "visual::visual(QWidget *parent, char* fullpath) : QDialog(parent) {";
+qDebug() << "visual::visual(QWidget *parent, char* fullpath) : QDialog(parent) { --- works";
 #endif
 buttonId = 0;
 loopId = 0;
@@ -38,11 +32,7 @@ show();
 #ifdef MARKERS
 qDebug() << " *********************** constr over *************************** fullpath " << fullpath;
 #endif
-} //constructor
-
-/*!
-Чтение файла настроек перед началом работы для конфигурирования сокета - часть конструктора срабатывает однажды
-*/
+} ///constr
 
 void visual::initSettings() {
 #ifdef MARKERS
@@ -105,11 +95,7 @@ setts->beginGroup("ip_settings");
 	}
 setts->endGroup();
 setts->~QSettings();
-} //func
-
-/*!
-Инициализация сокета для приема/передачи данных - часть конструктора срабатывает однажды
-*/
+} ///func
 
 void visual::initSocket() {
 #ifdef MARKERS
@@ -122,11 +108,7 @@ ui.l_soc_stay->setText("Порт открыт");
 } else {
 ui.l_soc_stay->setText("Ошибка открытия порта");
 }
-} //func
-
-/*!
-Первичные настройки визуальной формы - часть конструктора срабатывает однажды
-*/
+} ///func
 
 void visual::initUi() {
 #ifdef MARKERS
@@ -138,12 +120,7 @@ cmdset = 0xcc;
 cmdset = 0xdd;
 }
 QObject::connect(ui.pb_do_work, SIGNAL(toggled(bool)), this, SLOT(clickOn(bool)));
-} //func
-
-/*!
-Обработчик нажатия кнопки, содержит задержку 750мс
-\param [in] toggled текущее состояние кнопки нажата/отжата
-*/
+} ///func
 
 void visual::clickOn(bool toggled) {
 #ifdef MARKERS
@@ -166,14 +143,7 @@ ui.l_iam_tryset->setText("ожидание подтверждения...");
 if (!blinkId) blinkId = startTimer(BLIKTIMER);
 if (buttonId) killTimer(buttonId);
 buttonId = startTimer(BUTTONTIMEOUT);
-} //func
-
-/*!
-Обработчик сигналов таймера
-\details таймер маркированый <blinkId> обеспечивает мигание индикации на визуальной форме
-\details таймер маркированый <loopId> ожидание перед началом опроса текущего режима работы ворот 30 сек
-\details таймер маркированый <buttonId> задержка после которой будет выполнена повторная отправка команда к воротам используется в случае если ворота не в требуемом режиме
-*/
+} ///func
 
 void visual::timerEvent(QTimerEvent* event) {
 #ifdef MARKERS
@@ -198,11 +168,7 @@ ui.l_iam_tryset->setText(QString());
 }
 return;
 }
-} //func
-
-/*!
-Отправка запроса состояние ворот см. Related Pages
-*/
+} ///func
 
 void visual::askGateStay() {
 #ifdef MARKERS
@@ -216,11 +182,7 @@ arr.append((char)(0));
 arr.append((char)(0xff));
 if (USoc) USoc->sending(arr);
 loopId = startTimer(COMMANDLOOP/10);
-}//func
-
-/*!
-Отправка требуемого режима работы к воротам см. Related Pages
-*/
+}///func
 
 void visual::setCurrentCmdToGate() {
 #ifdef MARKERS
@@ -232,11 +194,7 @@ arr.append((char)(0xfa));
 arr.append((char)(cmdset));
 arr.append((char)(0xff));
 if (USoc) USoc->sending(arr);
-} //func
-
-/*!
-Обработка данных, полученных от ворот
-*/
+} ///func
 
 void visual::readData(QByteArray dt) {
 #ifdef MARKERS
@@ -258,4 +216,4 @@ if (stayNow != cmdset) {
 		ui.l_iam_tryset->setText("подтверждено!");
 	}
 }
-} //func
+} ///func
