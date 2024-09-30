@@ -25,16 +25,16 @@ void \mbox{\hyperlink{class_udp__sock_a1d2eb9c7f039b595e04746ccd8aa1d25}{sending
 \doxysubsubsection*{Signals}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_udp__sock_a423c0cbc72ee46ceef0a984bd1b0241b}\label{class_udp__sock_a423c0cbc72ee46ceef0a984bd1b0241b} 
-void {\bfseries data\+Income} (QByte\+Array, QHost\+Address, quint16)
+void \mbox{\hyperlink{class_udp__sock_a423c0cbc72ee46ceef0a984bd1b0241b}{data\+Income}} (QByte\+Array, QHost\+Address, quint16)
 \item 
-\Hypertarget{class_udp__sock_ac2bab75428813fa9e8defe24f605310b}\label{class_udp__sock_ac2bab75428813fa9e8defe24f605310b} 
-void {\bfseries data\+Income} (QByte\+Array, QString, quint16)
+void \mbox{\hyperlink{class_udp__sock_ac2bab75428813fa9e8defe24f605310b}{data\+Income}} (QByte\+Array, QString, quint16)
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{class_udp__sock_ab04e55ac971f3dcc9dfec825d41ec568}{Udp\+\_\+sock}} (QString, QString, QString, QString)
+\item 
+virtual \mbox{\hyperlink{class_udp__sock_a8e7bc6feb321bc3dcf5c02c5655b071a}{\texorpdfstring{$\sim$}{\string~}\+Udp\+\_\+sock}} ()
 \item 
 void \mbox{\hyperlink{class_udp__sock_a5c26e877d34512b84bcaeed69be152fb}{drop}} ()
 \item 
@@ -43,14 +43,45 @@ void \mbox{\hyperlink{class_udp__sock_aff0d9024ce029cb9ec0b4891d6a67df5}{rise}} 
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{class_udp__sock_a92028f7238a9a0d2299a1905c461305e}\label{class_udp__sock_a92028f7238a9a0d2299a1905c461305e} 
-bool {\bfseries bindresult}
+bool \mbox{\hyperlink{class_udp__sock_a92028f7238a9a0d2299a1905c461305e}{bindresult}}
 \begin{DoxyCompactList}\small\item\em Переменная, отражающая значение успешно ли выполнен BIND приемного сокета после конструктора \end{DoxyCompactList}\item 
-\Hypertarget{class_udp__sock_aad0e2c302d3967e55220ff3ee207e917}\label{class_udp__sock_aad0e2c302d3967e55220ff3ee207e917} 
-bool {\bfseries multirec}
+bool \mbox{\hyperlink{class_udp__sock_aad0e2c302d3967e55220ff3ee207e917}{multirec}}
 \begin{DoxyCompactList}\small\item\em Переменная, для индикации включения режима multicast. \end{DoxyCompactList}\item 
 quint16 \mbox{\hyperlink{class_udp__sock_afe6e51a73c273c7c1bccfa731dc1970c}{multicount}}
 \begin{DoxyCompactList}\small\item\em Переменная, для индикации колличества multicast групп в которых состоит сокет \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_udp__sock_a1ad4a62fb50292fd1317b088eb708b20}{socket\+Say\+Error}} (QAbstract\+Socket\+::\+Socket\+Error)
+\item 
+void \mbox{\hyperlink{class_udp__sock_a86558a0d1db5154e769b8899adcb1f0c}{sock\+Connected}} ()
+\item 
+void \mbox{\hyperlink{class_udp__sock_a45c05c44d41bffe2cf46d1b2d59d079a}{sock\+Disconnected}} ()
+\item 
+void \mbox{\hyperlink{class_udp__sock_a108afd4191c081856d9073ddee799130}{reading}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{class_udp__sock_adfb4d625118e23260a151e794e15b7a0}{multicast\+Set}} (QHost\+Address, bool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QUdp\+Socket \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_udp__sock_a4c8f63177671d90fbd7ff82c581e32fd}{USoc}}
+\begin{DoxyCompactList}\small\item\em Указатель на объект сокета для отправки \end{DoxyCompactList}\item 
+QUdp\+Socket \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{class_udp__sock_ad3e5efe8b0ee07f060ed694854a15b35}{receiv\+Esocket}}
+\begin{DoxyCompactList}\small\item\em Указатель на объект сокета для получения данных \end{DoxyCompactList}\item 
+QHost\+Address \mbox{\hyperlink{class_udp__sock_ae5575b3a3b7c91087ce417ac111f13bf}{ipaddress}}
+\begin{DoxyCompactList}\small\item\em Переменная для хранения значения IP адреса который используется для BIND приемного сокета \end{DoxyCompactList}\item 
+QHost\+Address \mbox{\hyperlink{class_udp__sock_a8e33c0892a7b9ec9bec07680889e0fee}{ipremaddress}}
+\begin{DoxyCompactList}\small\item\em Переменная для хранения значения IP адреса на который выполняется передача пакетов по умолчанию \end{DoxyCompactList}\item 
+QHost\+Address \mbox{\hyperlink{class_udp__sock_a04454137d03b72d96f9451218ec6d394}{multicast\+Ip}}
+\begin{DoxyCompactList}\small\item\em Переменная для хранения значения multicast IP адреса который используется для приема данных из multicast группы \end{DoxyCompactList}\item 
+quint16 \mbox{\hyperlink{class_udp__sock_ad0dad9e942dc3e890fdfaeb8323a7ed2}{lport}}
+\begin{DoxyCompactList}\small\item\em Переменная для хранения значения порта который используется для приема данных \end{DoxyCompactList}\item 
+quint16 \mbox{\hyperlink{class_udp__sock_a3b30264fa6ca169f224183b1f1424327}{remport}}
+\begin{DoxyCompactList}\small\item\em Переменная для хранения значения порта на который выполняется передача пакетов по умолчанию \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Detailed Description}
@@ -74,9 +105,27 @@ Udp\+\_\+sock\+::\+Udp\+\_\+sock (\begin{DoxyParamCaption}\item[{QString}]{ip}{,
 \mbox{\texttt{ in}}  & {\em remaddr} & значение IP адреса получателя пакета \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_udp__sock_a8e7bc6feb321bc3dcf5c02c5655b071a}\index{Udp\_sock@{Udp\_sock}!````~Udp\_sock@{\texorpdfstring{$\sim$}{\string~}Udp\_sock}}
+\index{````~Udp\_sock@{\texorpdfstring{$\sim$}{\string~}Udp\_sock}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}Udp\_sock()}{\string~Udp\_sock()}}
+{\footnotesize\ttfamily \label{class_udp__sock_a8e7bc6feb321bc3dcf5c02c5655b071a} 
+Udp\+\_\+sock\+::\texorpdfstring{$\sim$}{\string~}\+Udp\+\_\+sock (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
 
 
 \doxysubsection{Member Function Documentation}
+\Hypertarget{class_udp__sock_a423c0cbc72ee46ceef0a984bd1b0241b}\index{Udp\_sock@{Udp\_sock}!dataIncome@{dataIncome}}
+\index{dataIncome@{dataIncome}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{dataIncome}{dataIncome}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily \label{class_udp__sock_a423c0cbc72ee46ceef0a984bd1b0241b} 
+void Udp\+\_\+sock\+::data\+Income (\begin{DoxyParamCaption}\item[{QByte\+Array}]{}{, }\item[{QHost\+Address}]{}{, }\item[{quint16}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+\Hypertarget{class_udp__sock_ac2bab75428813fa9e8defe24f605310b}\index{Udp\_sock@{Udp\_sock}!dataIncome@{dataIncome}}
+\index{dataIncome@{dataIncome}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{dataIncome}{dataIncome}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily \label{class_udp__sock_ac2bab75428813fa9e8defe24f605310b} 
+void Udp\+\_\+sock\+::data\+Income (\begin{DoxyParamCaption}\item[{QByte\+Array}]{}{, }\item[{QString}]{}{, }\item[{quint16}]{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
 \Hypertarget{class_udp__sock_a5c26e877d34512b84bcaeed69be152fb}\index{Udp\_sock@{Udp\_sock}!drop@{drop}}
 \index{drop@{drop}!Udp\_sock@{Udp\_sock}}
 \doxysubsubsection{\texorpdfstring{drop()}{drop()}}
@@ -86,7 +135,39 @@ void Udp\+\_\+sock\+::drop (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})}
 Остановить работающий сокет не прибегая к деструктору для смены параметров \begin{DoxyWarning}{Warning}
 состояние mulicast on/off сохраняется 
 \end{DoxyWarning}
-\Hypertarget{class_udp__sock_aff0d9024ce029cb9ec0b4891d6a67df5}\index{Udp\_sock@{Udp\_sock}!rise@{rise}}
+\Hypertarget{class_udp__sock_adfb4d625118e23260a151e794e15b7a0}\index{Udp\_sock@{Udp\_sock}!multicastSet@{multicastSet}}
+\index{multicastSet@{multicastSet}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{multicastSet()}{multicastSet()}}
+{\footnotesize\ttfamily \label{class_udp__sock_adfb4d625118e23260a151e794e15b7a0} 
+void Udp\+\_\+sock\+::multicast\+Set (\begin{DoxyParamCaption}\item[{QHost\+Address}]{multic\+Ip}{, }\item[{bool}]{turn\+On}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Установка режима multicast 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em multic\+Ip} & \{значение multicast адреса \\
+\hline
+\end{DoxyParams}
+\begin{DoxyWarning}{Warning}
+предусмотрена проверка диаппазона адреса\} 
+\end{DoxyWarning}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em turn\+On} & \{включение режима multicast\} \\
+\hline
+\end{DoxyParams}
+if IPv4\+Protocol
+
+foreach
+
+if flags ~\newline
+
+
+foreach\Hypertarget{class_udp__sock_a108afd4191c081856d9073ddee799130}\index{Udp\_sock@{Udp\_sock}!reading@{reading}}
+\index{reading@{reading}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{reading}{reading}}
+{\footnotesize\ttfamily \label{class_udp__sock_a108afd4191c081856d9073ddee799130} 
+void Udp\+\_\+sock\+::reading (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Чтение данных из UDP сокета -\/ вызывает -\/ emit data\+Income(... \Hypertarget{class_udp__sock_aff0d9024ce029cb9ec0b4891d6a67df5}\index{Udp\_sock@{Udp\_sock}!rise@{rise}}
 \index{rise@{rise}!Udp\_sock@{Udp\_sock}}
 \doxysubsubsection{\texorpdfstring{rise()}{rise()}}
 {\footnotesize\ttfamily \label{class_udp__sock_aff0d9024ce029cb9ec0b4891d6a67df5} 
@@ -130,9 +211,88 @@ void Udp\+\_\+sock\+::sending (\begin{DoxyParamCaption}\item[{QByte\+Array}]{out
 \mbox{\texttt{ in}}  & {\em nowport} & \{Порт получателя\} \\
 \hline
 \end{DoxyParams}
+\Hypertarget{class_udp__sock_a86558a0d1db5154e769b8899adcb1f0c}\index{Udp\_sock@{Udp\_sock}!sockConnected@{sockConnected}}
+\index{sockConnected@{sockConnected}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{sockConnected}{sockConnected}}
+{\footnotesize\ttfamily \label{class_udp__sock_a86558a0d1db5154e769b8899adcb1f0c} 
+void Udp\+\_\+sock\+::sock\+Connected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Индикация при сигнале сокета -\/ connected() \begin{DoxyWarning}{Warning}
+для тестирования 
+\end{DoxyWarning}
+\Hypertarget{class_udp__sock_a45c05c44d41bffe2cf46d1b2d59d079a}\index{Udp\_sock@{Udp\_sock}!sockDisconnected@{sockDisconnected}}
+\index{sockDisconnected@{sockDisconnected}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{sockDisconnected}{sockDisconnected}}
+{\footnotesize\ttfamily \label{class_udp__sock_a45c05c44d41bffe2cf46d1b2d59d079a} 
+void Udp\+\_\+sock\+::sock\+Disconnected (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Индикация при сигнале сокета -\/ disconnected() \begin{DoxyWarning}{Warning}
+для тестирования 
+\end{DoxyWarning}
+\Hypertarget{class_udp__sock_a1ad4a62fb50292fd1317b088eb708b20}\index{Udp\_sock@{Udp\_sock}!socketSayError@{socketSayError}}
+\index{socketSayError@{socketSayError}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{socketSayError}{socketSayError}}
+{\footnotesize\ttfamily \label{class_udp__sock_a1ad4a62fb50292fd1317b088eb708b20} 
+void Udp\+\_\+sock\+::socket\+Say\+Error (\begin{DoxyParamCaption}\item[{QAbstract\+Socket\+::\+Socket\+Error}]{err}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Индикация ошибок предусмотренных классом QUdp\+Socket 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em err} & \{код ошибки\} \\
+\hline
+\end{DoxyParams}
 
 
 \doxysubsection{Member Data Documentation}
+\Hypertarget{class_udp__sock_a92028f7238a9a0d2299a1905c461305e}\index{Udp\_sock@{Udp\_sock}!bindresult@{bindresult}}
+\index{bindresult@{bindresult}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{bindresult}{bindresult}}
+{\footnotesize\ttfamily \label{class_udp__sock_a92028f7238a9a0d2299a1905c461305e} 
+bool Udp\+\_\+sock\+::bindresult}
+
+
+
+Переменная, отражающая значение успешно ли выполнен BIND приемного сокета после конструктора 
+
+\Hypertarget{class_udp__sock_ae5575b3a3b7c91087ce417ac111f13bf}\index{Udp\_sock@{Udp\_sock}!ipaddress@{ipaddress}}
+\index{ipaddress@{ipaddress}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{ipaddress}{ipaddress}}
+{\footnotesize\ttfamily \label{class_udp__sock_ae5575b3a3b7c91087ce417ac111f13bf} 
+QHost\+Address Udp\+\_\+sock\+::ipaddress\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Переменная для хранения значения IP адреса который используется для BIND приемного сокета 
+
+\Hypertarget{class_udp__sock_a8e33c0892a7b9ec9bec07680889e0fee}\index{Udp\_sock@{Udp\_sock}!ipremaddress@{ipremaddress}}
+\index{ipremaddress@{ipremaddress}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{ipremaddress}{ipremaddress}}
+{\footnotesize\ttfamily \label{class_udp__sock_a8e33c0892a7b9ec9bec07680889e0fee} 
+QHost\+Address Udp\+\_\+sock\+::ipremaddress\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Переменная для хранения значения IP адреса на который выполняется передача пакетов по умолчанию 
+
+\Hypertarget{class_udp__sock_ad0dad9e942dc3e890fdfaeb8323a7ed2}\index{Udp\_sock@{Udp\_sock}!lport@{lport}}
+\index{lport@{lport}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{lport}{lport}}
+{\footnotesize\ttfamily \label{class_udp__sock_ad0dad9e942dc3e890fdfaeb8323a7ed2} 
+quint16 Udp\+\_\+sock\+::lport\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Переменная для хранения значения порта который используется для приема данных 
+
+\Hypertarget{class_udp__sock_a04454137d03b72d96f9451218ec6d394}\index{Udp\_sock@{Udp\_sock}!multicastIp@{multicastIp}}
+\index{multicastIp@{multicastIp}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{multicastIp}{multicastIp}}
+{\footnotesize\ttfamily \label{class_udp__sock_a04454137d03b72d96f9451218ec6d394} 
+QHost\+Address Udp\+\_\+sock\+::multicast\+Ip\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Переменная для хранения значения multicast IP адреса который используется для приема данных из multicast группы 
+
 \Hypertarget{class_udp__sock_afe6e51a73c273c7c1bccfa731dc1970c}\index{Udp\_sock@{Udp\_sock}!multicount@{multicount}}
 \index{multicount@{multicount}!Udp\_sock@{Udp\_sock}}
 \doxysubsubsection{\texorpdfstring{multicount}{multicount}}
@@ -146,6 +306,46 @@ quint16 Udp\+\_\+sock\+::multicount}
 \begin{DoxyWarning}{Warning}
 контролировать!! по идее сокет должен быть только в одной группе. 
 \end{DoxyWarning}
+\Hypertarget{class_udp__sock_aad0e2c302d3967e55220ff3ee207e917}\index{Udp\_sock@{Udp\_sock}!multirec@{multirec}}
+\index{multirec@{multirec}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{multirec}{multirec}}
+{\footnotesize\ttfamily \label{class_udp__sock_aad0e2c302d3967e55220ff3ee207e917} 
+bool Udp\+\_\+sock\+::multirec}
+
+
+
+Переменная, для индикации включения режима multicast. 
+
+\Hypertarget{class_udp__sock_ad3e5efe8b0ee07f060ed694854a15b35}\index{Udp\_sock@{Udp\_sock}!receivEsocket@{receivEsocket}}
+\index{receivEsocket@{receivEsocket}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{receivEsocket}{receivEsocket}}
+{\footnotesize\ttfamily \label{class_udp__sock_ad3e5efe8b0ee07f060ed694854a15b35} 
+QUdp\+Socket\texorpdfstring{$\ast$}{*} Udp\+\_\+sock\+::receiv\+Esocket\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Указатель на объект сокета для получения данных 
+
+\Hypertarget{class_udp__sock_a3b30264fa6ca169f224183b1f1424327}\index{Udp\_sock@{Udp\_sock}!remport@{remport}}
+\index{remport@{remport}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{remport}{remport}}
+{\footnotesize\ttfamily \label{class_udp__sock_a3b30264fa6ca169f224183b1f1424327} 
+quint16 Udp\+\_\+sock\+::remport\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Переменная для хранения значения порта на который выполняется передача пакетов по умолчанию 
+
+\Hypertarget{class_udp__sock_a4c8f63177671d90fbd7ff82c581e32fd}\index{Udp\_sock@{Udp\_sock}!USoc@{USoc}}
+\index{USoc@{USoc}!Udp\_sock@{Udp\_sock}}
+\doxysubsubsection{\texorpdfstring{USoc}{USoc}}
+{\footnotesize\ttfamily \label{class_udp__sock_a4c8f63177671d90fbd7ff82c581e32fd} 
+QUdp\+Socket\texorpdfstring{$\ast$}{*} Udp\+\_\+sock\+::\+USoc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Указатель на объект сокета для отправки 
+
 
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}

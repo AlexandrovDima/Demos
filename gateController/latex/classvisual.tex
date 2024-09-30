@@ -1,5 +1,9 @@
 \doxysection{visual Class Reference}
 \hypertarget{classvisual}{}\label{classvisual}\index{visual@{visual}}
+
+
+{\ttfamily \#include $<$visual.\+h$>$}
+
 Inheritance diagram for visual\+:\begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -10,18 +14,66 @@ Inheritance diagram for visual\+:\begin{figure}[H]
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\hyperlink{classvisual_a69c2ba5ce930104f7b70450ba78e4eed}{visual}} (char \texorpdfstring{$\ast$}{*})
+\item 
+virtual \mbox{\hyperlink{classvisual_a3a21287130d853168837985f7bc14022}{\texorpdfstring{$\sim$}{\string~}visual}} ()
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\Hypertarget{classvisual_ac466c167699e34be4f2673ce12f466c1}\label{classvisual_ac466c167699e34be4f2673ce12f466c1} 
-\+::\+Ui\+::visual {\bfseries ui}
+\+::\+Ui\+::visual \mbox{\hyperlink{classvisual_ac466c167699e34be4f2673ce12f466c1}{ui}}
 \end{DoxyCompactItemize}
 \doxysubsubsection*{Protected Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 void \mbox{\hyperlink{classvisual_af3543cc4ebfc0038b0ed7f184224e573}{timer\+Event}} (QTimer\+Event \texorpdfstring{$\ast$}{*})
 \end{DoxyCompactItemize}
+\doxysubsubsection*{Private Slots}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classvisual_adcf87ad6024b59284a19178fc9b2e97d}{read\+Data}} (QByte\+Array)
+\item 
+void \mbox{\hyperlink{classvisual_a770cf7a6aa39a27423ef76aad46471ff}{click\+On}} (bool)
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classvisual_a2b9f6b9b823820e7a21ce56433127ee9}{init\+Settings}} ()
+\item 
+void \mbox{\hyperlink{classvisual_afcda6318b292dc142ab2591d6b5895e4}{init\+Socket}} ()
+\item 
+void \mbox{\hyperlink{classvisual_af5b3518272260431e9b6dbd89db3baf7}{init\+Ui}} ()
+\item 
+void \mbox{\hyperlink{classvisual_ae94f06d7f69481fba8bacbfa6abd1d52}{set\+Current\+Cmd\+To\+Gate}} ()
+\item 
+void \mbox{\hyperlink{classvisual_a20967dd2b9e05bb531ab83a2f5bc8c75}{ask\+Gate\+Stay}} ()
+\end{DoxyCompactItemize}
+\doxysubsubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+QString \mbox{\hyperlink{classvisual_a14d9ea88695d345a7393e8aa2ce8da7c}{fullpath}}
+\begin{DoxyCompactList}\small\item\em Хранит абсолютный путь местоположения исполняемого файла, используется для организации работы QSetings в классе \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classvisual_a9373dbeca553136bd4a56bc84aed9ecd}{ip}}
+\begin{DoxyCompactList}\small\item\em IP адрес для приема данных, восстановленный из конфигурационого файла \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classvisual_ac8f9c5c37ab409ffaff7096efde0225e}{loc\+Port}}
+\begin{DoxyCompactList}\small\item\em Порт для приема данных, восстановленный из конфигурационого файла \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classvisual_ae978595f0b0dc44a5f4afc2722b15289}{rem\+Ip}}
+\begin{DoxyCompactList}\small\item\em IP адрес получателя данных, восстановленный из конфигурационого файла \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classvisual_a60eebb6b238a27d2c3e147a2c23d3d28}{rem\+Port}}
+\begin{DoxyCompactList}\small\item\em Порт получателя данных, восстановленный из конфигурационого файла \end{DoxyCompactList}\item 
+QString \mbox{\hyperlink{classvisual_a7d357ae4901c746ec2ee67b635605f16}{multi\+Ip}}
+\begin{DoxyCompactList}\small\item\em IP адрес multicast для приема данных, восстановленный из конфигурационого файла \end{DoxyCompactList}\item 
+bool \mbox{\hyperlink{classvisual_a729591db2f5a5a7fcc9874a00a948b32}{multi\+On}}
+\begin{DoxyCompactList}\small\item\em Признак использования multicast адреса для приема данных, восстановленный из конфигурационого файла \end{DoxyCompactList}\item 
+quint8 \mbox{\hyperlink{classvisual_aed51e366c1af0d56fcf92ac1b361f1b9}{cmdset}}
+\begin{DoxyCompactList}\small\item\em Хранение текущей команды которая отправлена или будет отправлена к воротам \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classvisual_ad815b7038f64dd3ca60f529463d6a5ae}{button\+Id}}
+\begin{DoxyCompactList}\small\item\em Идентификатор таймера для задержки после нажатия кнопки \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classvisual_af2f19140a14925857350739579290447}{loop\+Id}}
+\begin{DoxyCompactList}\small\item\em Идентификатор таймера для обеспечения задержки после которой можно опрашивать ворота \end{DoxyCompactList}\item 
+int \mbox{\hyperlink{classvisual_ae30ffe7d51acb95440fa99d6f384ea9d}{blink\+Id}}
+\begin{DoxyCompactList}\small\item\em Идентификатор таймера для обеспечения моргания надписи \end{DoxyCompactList}\item 
+\mbox{\hyperlink{class_udp__sock}{Udp\+\_\+sock}} \texorpdfstring{$\ast$}{*} \mbox{\hyperlink{classvisual_a60143309412a96160956685b8ee9ecb2}{USoc}}
+\begin{DoxyCompactList}\small\item\em Указатель на объект сокета используемый для отправки данных/получения данных от ворот \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \doxysubsection{Constructor \& Destructor Documentation}
@@ -36,10 +88,63 @@ visual\+::visual (\begin{DoxyParamCaption}\item[{char \texorpdfstring{$\ast$}{*}
 \mbox{\texttt{ in}}  & {\em \texorpdfstring{$\ast$}{*}fullpath} & параметр передаваемый как -\/(char\texorpdfstring{$\ast$}{*}) argv\mbox{[}0\mbox{]}-\/ для определения местоположения исполняемого файла \\
 \hline
 \end{DoxyParams}
+\Hypertarget{classvisual_a3a21287130d853168837985f7bc14022}\index{visual@{visual}!````~visual@{\texorpdfstring{$\sim$}{\string~}visual}}
+\index{````~visual@{\texorpdfstring{$\sim$}{\string~}visual}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{\texorpdfstring{$\sim$}{\string~}visual()}{\string~visual()}}
+{\footnotesize\ttfamily \label{classvisual_a3a21287130d853168837985f7bc14022} 
+virtual visual\+::\texorpdfstring{$\sim$}{\string~}visual (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [virtual]}}
+
 
 
 \doxysubsection{Member Function Documentation}
-\Hypertarget{classvisual_af3543cc4ebfc0038b0ed7f184224e573}\index{visual@{visual}!timerEvent@{timerEvent}}
+\Hypertarget{classvisual_a20967dd2b9e05bb531ab83a2f5bc8c75}\index{visual@{visual}!askGateStay@{askGateStay}}
+\index{askGateStay@{askGateStay}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{askGateStay()}{askGateStay()}}
+{\footnotesize\ttfamily \label{classvisual_a20967dd2b9e05bb531ab83a2f5bc8c75} 
+void visual\+::ask\+Gate\+Stay (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Отправка запроса состояние ворот см. Related Pages \Hypertarget{classvisual_a770cf7a6aa39a27423ef76aad46471ff}\index{visual@{visual}!clickOn@{clickOn}}
+\index{clickOn@{clickOn}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{clickOn}{clickOn}}
+{\footnotesize\ttfamily \label{classvisual_a770cf7a6aa39a27423ef76aad46471ff} 
+void visual\+::click\+On (\begin{DoxyParamCaption}\item[{bool}]{toggled}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Обработчик нажатия кнопки, содержит задержку 750мс 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em toggled} & текущее состояние кнопки нажата/отжата \\
+\hline
+\end{DoxyParams}
+\Hypertarget{classvisual_a2b9f6b9b823820e7a21ce56433127ee9}\index{visual@{visual}!initSettings@{initSettings}}
+\index{initSettings@{initSettings}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{initSettings()}{initSettings()}}
+{\footnotesize\ttfamily \label{classvisual_a2b9f6b9b823820e7a21ce56433127ee9} 
+void visual\+::init\+Settings (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Чтение файла настроек перед началом работы для конфигурирования сокета -\/ часть конструктора срабатывает однажды \Hypertarget{classvisual_afcda6318b292dc142ab2591d6b5895e4}\index{visual@{visual}!initSocket@{initSocket}}
+\index{initSocket@{initSocket}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{initSocket()}{initSocket()}}
+{\footnotesize\ttfamily \label{classvisual_afcda6318b292dc142ab2591d6b5895e4} 
+void visual\+::init\+Socket (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Инициализация сокета для приема/передачи данных -\/ часть конструктора срабатывает однажды \Hypertarget{classvisual_af5b3518272260431e9b6dbd89db3baf7}\index{visual@{visual}!initUi@{initUi}}
+\index{initUi@{initUi}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{initUi()}{initUi()}}
+{\footnotesize\ttfamily \label{classvisual_af5b3518272260431e9b6dbd89db3baf7} 
+void visual\+::init\+Ui (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Первичные настройки визуальной формы -\/ часть конструктора срабатывает однажды \Hypertarget{classvisual_adcf87ad6024b59284a19178fc9b2e97d}\index{visual@{visual}!readData@{readData}}
+\index{readData@{readData}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{readData}{readData}}
+{\footnotesize\ttfamily \label{classvisual_adcf87ad6024b59284a19178fc9b2e97d} 
+void visual\+::read\+Data (\begin{DoxyParamCaption}\item[{QByte\+Array}]{dt}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}, {\ttfamily [slot]}}
+
+Обработка данных, полученных от ворот \Hypertarget{classvisual_ae94f06d7f69481fba8bacbfa6abd1d52}\index{visual@{visual}!setCurrentCmdToGate@{setCurrentCmdToGate}}
+\index{setCurrentCmdToGate@{setCurrentCmdToGate}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{setCurrentCmdToGate()}{setCurrentCmdToGate()}}
+{\footnotesize\ttfamily \label{classvisual_ae94f06d7f69481fba8bacbfa6abd1d52} 
+void visual\+::set\+Current\+Cmd\+To\+Gate (\begin{DoxyParamCaption}{}{}\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+Отправка требуемого режима работы к воротам см. Related Pages \Hypertarget{classvisual_af3543cc4ebfc0038b0ed7f184224e573}\index{visual@{visual}!timerEvent@{timerEvent}}
 \index{timerEvent@{timerEvent}!visual@{visual}}
 \doxysubsubsection{\texorpdfstring{timerEvent()}{timerEvent()}}
 {\footnotesize\ttfamily \label{classvisual_af3543cc4ebfc0038b0ed7f184224e573} 
@@ -52,6 +157,138 @@ void visual\+::timer\+Event (\begin{DoxyParamCaption}\item[{QTimer\+Event \texor
 таймер маркированый $<$loop\+Id$>$ ожидание перед началом опроса текущего режима работы ворот 30 сек
 
 таймер маркированый $<$button\+Id$>$ задержка после которой будет выполнена повторная отправка команда к воротам используется в случае если ворота не в требуемом режиме 
+
+\doxysubsection{Member Data Documentation}
+\Hypertarget{classvisual_ae30ffe7d51acb95440fa99d6f384ea9d}\index{visual@{visual}!blinkId@{blinkId}}
+\index{blinkId@{blinkId}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{blinkId}{blinkId}}
+{\footnotesize\ttfamily \label{classvisual_ae30ffe7d51acb95440fa99d6f384ea9d} 
+int visual\+::blink\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Идентификатор таймера для обеспечения моргания надписи 
+
+\Hypertarget{classvisual_ad815b7038f64dd3ca60f529463d6a5ae}\index{visual@{visual}!buttonId@{buttonId}}
+\index{buttonId@{buttonId}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{buttonId}{buttonId}}
+{\footnotesize\ttfamily \label{classvisual_ad815b7038f64dd3ca60f529463d6a5ae} 
+int visual\+::button\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Идентификатор таймера для задержки после нажатия кнопки 
+
+\Hypertarget{classvisual_aed51e366c1af0d56fcf92ac1b361f1b9}\index{visual@{visual}!cmdset@{cmdset}}
+\index{cmdset@{cmdset}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{cmdset}{cmdset}}
+{\footnotesize\ttfamily \label{classvisual_aed51e366c1af0d56fcf92ac1b361f1b9} 
+quint8 visual\+::cmdset\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Хранение текущей команды которая отправлена или будет отправлена к воротам 
+
+\Hypertarget{classvisual_a14d9ea88695d345a7393e8aa2ce8da7c}\index{visual@{visual}!fullpath@{fullpath}}
+\index{fullpath@{fullpath}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{fullpath}{fullpath}}
+{\footnotesize\ttfamily \label{classvisual_a14d9ea88695d345a7393e8aa2ce8da7c} 
+QString visual\+::fullpath\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Хранит абсолютный путь местоположения исполняемого файла, используется для организации работы QSetings в классе 
+
+\Hypertarget{classvisual_a9373dbeca553136bd4a56bc84aed9ecd}\index{visual@{visual}!ip@{ip}}
+\index{ip@{ip}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{ip}{ip}}
+{\footnotesize\ttfamily \label{classvisual_a9373dbeca553136bd4a56bc84aed9ecd} 
+QString visual\+::ip\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+IP адрес для приема данных, восстановленный из конфигурационого файла 
+
+\Hypertarget{classvisual_ac8f9c5c37ab409ffaff7096efde0225e}\index{visual@{visual}!locPort@{locPort}}
+\index{locPort@{locPort}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{locPort}{locPort}}
+{\footnotesize\ttfamily \label{classvisual_ac8f9c5c37ab409ffaff7096efde0225e} 
+QString visual\+::loc\+Port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Порт для приема данных, восстановленный из конфигурационого файла 
+
+\Hypertarget{classvisual_af2f19140a14925857350739579290447}\index{visual@{visual}!loopId@{loopId}}
+\index{loopId@{loopId}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{loopId}{loopId}}
+{\footnotesize\ttfamily \label{classvisual_af2f19140a14925857350739579290447} 
+int visual\+::loop\+Id\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Идентификатор таймера для обеспечения задержки после которой можно опрашивать ворота 
+
+\Hypertarget{classvisual_a7d357ae4901c746ec2ee67b635605f16}\index{visual@{visual}!multiIp@{multiIp}}
+\index{multiIp@{multiIp}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{multiIp}{multiIp}}
+{\footnotesize\ttfamily \label{classvisual_a7d357ae4901c746ec2ee67b635605f16} 
+QString visual\+::multi\+Ip\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+IP адрес multicast для приема данных, восстановленный из конфигурационого файла 
+
+\Hypertarget{classvisual_a729591db2f5a5a7fcc9874a00a948b32}\index{visual@{visual}!multiOn@{multiOn}}
+\index{multiOn@{multiOn}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{multiOn}{multiOn}}
+{\footnotesize\ttfamily \label{classvisual_a729591db2f5a5a7fcc9874a00a948b32} 
+bool visual\+::multi\+On\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Признак использования multicast адреса для приема данных, восстановленный из конфигурационого файла 
+
+\begin{DoxyWarning}{Warning}
+значение true не проверялось 
+\end{DoxyWarning}
+\Hypertarget{classvisual_ae978595f0b0dc44a5f4afc2722b15289}\index{visual@{visual}!remIp@{remIp}}
+\index{remIp@{remIp}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{remIp}{remIp}}
+{\footnotesize\ttfamily \label{classvisual_ae978595f0b0dc44a5f4afc2722b15289} 
+QString visual\+::rem\+Ip\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+IP адрес получателя данных, восстановленный из конфигурационого файла 
+
+\Hypertarget{classvisual_a60eebb6b238a27d2c3e147a2c23d3d28}\index{visual@{visual}!remPort@{remPort}}
+\index{remPort@{remPort}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{remPort}{remPort}}
+{\footnotesize\ttfamily \label{classvisual_a60eebb6b238a27d2c3e147a2c23d3d28} 
+QString visual\+::rem\+Port\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Порт получателя данных, восстановленный из конфигурационого файла 
+
+\Hypertarget{classvisual_ac466c167699e34be4f2673ce12f466c1}\index{visual@{visual}!ui@{ui}}
+\index{ui@{ui}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{ui}{ui}}
+{\footnotesize\ttfamily \label{classvisual_ac466c167699e34be4f2673ce12f466c1} 
+\+::\+Ui\+::visual visual\+::ui}
+
+\Hypertarget{classvisual_a60143309412a96160956685b8ee9ecb2}\index{visual@{visual}!USoc@{USoc}}
+\index{USoc@{USoc}!visual@{visual}}
+\doxysubsubsection{\texorpdfstring{USoc}{USoc}}
+{\footnotesize\ttfamily \label{classvisual_a60143309412a96160956685b8ee9ecb2} 
+\mbox{\hyperlink{class_udp__sock}{Udp\+\_\+sock}}\texorpdfstring{$\ast$}{*} visual\+::\+USoc\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+Указатель на объект сокета используемый для отправки данных/получения данных от ворот 
+
+
 
 The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 

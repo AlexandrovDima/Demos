@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['multicount_0',['multicount',['../class_udp__sock.html#afe6e51a73c273c7c1bccfa731dc1970c',1,'Udp_sock']]],
-  ['multirec_1',['multirec',['../class_udp__sock.html#aad0e2c302d3967e55220ff3ee207e917',1,'Udp_sock']]]
+  ['cmdset_0',['cmdset',['../classvisual.html#aed51e366c1af0d56fcf92ac1b361f1b9',1,'visual']]]
 ];

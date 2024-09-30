@@ -90,6 +90,9 @@ $(function(){ initResizable(false); });
 <a href="#signals">Signals</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#pri-slots">Private Slots</a> &#124;
+<a href="#pri-methods">Private Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
 <a href="class_udp__sock-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">Udp_sock Class Reference</div></div>
 </div><!--header-->
@@ -115,17 +118,17 @@ Public Slots</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="signals" name="signals"></a>
 Signals</h2></td></tr>
-<tr class="memitem:a423c0cbc72ee46ceef0a984bd1b0241b" id="r_a423c0cbc72ee46ceef0a984bd1b0241b"><td class="memItemLeft" align="right" valign="top"><a id="a423c0cbc72ee46ceef0a984bd1b0241b" name="a423c0cbc72ee46ceef0a984bd1b0241b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dataIncome</b> (QByteArray, QHostAddress, quint16)</td></tr>
+<tr class="memitem:a423c0cbc72ee46ceef0a984bd1b0241b" id="r_a423c0cbc72ee46ceef0a984bd1b0241b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a423c0cbc72ee46ceef0a984bd1b0241b">dataIncome</a> (QByteArray, QHostAddress, quint16)</td></tr>
 <tr class="separator:a423c0cbc72ee46ceef0a984bd1b0241b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2bab75428813fa9e8defe24f605310b" id="r_ac2bab75428813fa9e8defe24f605310b"><td class="memItemLeft" align="right" valign="top"><a id="ac2bab75428813fa9e8defe24f605310b" name="ac2bab75428813fa9e8defe24f605310b"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>dataIncome</b> (QByteArray, QString, quint16)</td></tr>
+<tr class="memitem:ac2bab75428813fa9e8defe24f605310b" id="r_ac2bab75428813fa9e8defe24f605310b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2bab75428813fa9e8defe24f605310b">dataIncome</a> (QByteArray, QString, quint16)</td></tr>
 <tr class="separator:ac2bab75428813fa9e8defe24f605310b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:ab04e55ac971f3dcc9dfec825d41ec568" id="r_ab04e55ac971f3dcc9dfec825d41ec568"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab04e55ac971f3dcc9dfec825d41ec568">Udp_sock</a> (QString, QString, QString, QString)</td></tr>
 <tr class="separator:ab04e55ac971f3dcc9dfec825d41ec568"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e7bc6feb321bc3dcf5c02c5655b071a" id="r_a8e7bc6feb321bc3dcf5c02c5655b071a"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e7bc6feb321bc3dcf5c02c5655b071a">~Udp_sock</a> ()</td></tr>
+<tr class="separator:a8e7bc6feb321bc3dcf5c02c5655b071a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5c26e877d34512b84bcaeed69be152fb" id="r_a5c26e877d34512b84bcaeed69be152fb"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5c26e877d34512b84bcaeed69be152fb">drop</a> ()</td></tr>
 <tr class="separator:a5c26e877d34512b84bcaeed69be152fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aff0d9024ce029cb9ec0b4891d6a67df5" id="r_aff0d9024ce029cb9ec0b4891d6a67df5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff0d9024ce029cb9ec0b4891d6a67df5">rise</a> (QString, QString, QString)</td></tr>
@@ -133,17 +136,55 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a92028f7238a9a0d2299a1905c461305e" id="r_a92028f7238a9a0d2299a1905c461305e"><td class="memItemLeft" align="right" valign="top"><a id="a92028f7238a9a0d2299a1905c461305e" name="a92028f7238a9a0d2299a1905c461305e"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>bindresult</b></td></tr>
-<tr class="memdesc:a92028f7238a9a0d2299a1905c461305e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная, отражающая значение успешно ли выполнен BIND приемного сокета после конструктора <br /></td></tr>
+<tr class="memitem:a92028f7238a9a0d2299a1905c461305e" id="r_a92028f7238a9a0d2299a1905c461305e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92028f7238a9a0d2299a1905c461305e">bindresult</a></td></tr>
+<tr class="memdesc:a92028f7238a9a0d2299a1905c461305e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная, отражающая значение успешно ли выполнен BIND приемного сокета после конструктора  <br /></td></tr>
 <tr class="separator:a92028f7238a9a0d2299a1905c461305e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aad0e2c302d3967e55220ff3ee207e917" id="r_aad0e2c302d3967e55220ff3ee207e917"><td class="memItemLeft" align="right" valign="top"><a id="aad0e2c302d3967e55220ff3ee207e917" name="aad0e2c302d3967e55220ff3ee207e917"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>multirec</b></td></tr>
-<tr class="memdesc:aad0e2c302d3967e55220ff3ee207e917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная, для индикации включения режима multicast. <br /></td></tr>
+<tr class="memitem:aad0e2c302d3967e55220ff3ee207e917" id="r_aad0e2c302d3967e55220ff3ee207e917"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aad0e2c302d3967e55220ff3ee207e917">multirec</a></td></tr>
+<tr class="memdesc:aad0e2c302d3967e55220ff3ee207e917"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная, для индикации включения режима multicast.  <br /></td></tr>
 <tr class="separator:aad0e2c302d3967e55220ff3ee207e917"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe6e51a73c273c7c1bccfa731dc1970c" id="r_afe6e51a73c273c7c1bccfa731dc1970c"><td class="memItemLeft" align="right" valign="top">quint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afe6e51a73c273c7c1bccfa731dc1970c">multicount</a></td></tr>
 <tr class="memdesc:afe6e51a73c273c7c1bccfa731dc1970c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная, для индикации колличества multicast групп в которых состоит сокет  <br /></td></tr>
 <tr class="separator:afe6e51a73c273c7c1bccfa731dc1970c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-slots" name="pri-slots"></a>
+Private Slots</h2></td></tr>
+<tr class="memitem:a1ad4a62fb50292fd1317b088eb708b20" id="r_a1ad4a62fb50292fd1317b088eb708b20"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1ad4a62fb50292fd1317b088eb708b20">socketSayError</a> (QAbstractSocket::SocketError)</td></tr>
+<tr class="separator:a1ad4a62fb50292fd1317b088eb708b20"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a86558a0d1db5154e769b8899adcb1f0c" id="r_a86558a0d1db5154e769b8899adcb1f0c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a86558a0d1db5154e769b8899adcb1f0c">sockConnected</a> ()</td></tr>
+<tr class="separator:a86558a0d1db5154e769b8899adcb1f0c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a45c05c44d41bffe2cf46d1b2d59d079a" id="r_a45c05c44d41bffe2cf46d1b2d59d079a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a45c05c44d41bffe2cf46d1b2d59d079a">sockDisconnected</a> ()</td></tr>
+<tr class="separator:a45c05c44d41bffe2cf46d1b2d59d079a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a108afd4191c081856d9073ddee799130" id="r_a108afd4191c081856d9073ddee799130"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a108afd4191c081856d9073ddee799130">reading</a> ()</td></tr>
+<tr class="separator:a108afd4191c081856d9073ddee799130"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-methods" name="pri-methods"></a>
+Private Member Functions</h2></td></tr>
+<tr class="memitem:adfb4d625118e23260a151e794e15b7a0" id="r_adfb4d625118e23260a151e794e15b7a0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adfb4d625118e23260a151e794e15b7a0">multicastSet</a> (QHostAddress, bool)</td></tr>
+<tr class="separator:adfb4d625118e23260a151e794e15b7a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a4c8f63177671d90fbd7ff82c581e32fd" id="r_a4c8f63177671d90fbd7ff82c581e32fd"><td class="memItemLeft" align="right" valign="top">QUdpSocket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4c8f63177671d90fbd7ff82c581e32fd">USoc</a></td></tr>
+<tr class="memdesc:a4c8f63177671d90fbd7ff82c581e32fd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на объект сокета для отправки  <br /></td></tr>
+<tr class="separator:a4c8f63177671d90fbd7ff82c581e32fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3e5efe8b0ee07f060ed694854a15b35" id="r_ad3e5efe8b0ee07f060ed694854a15b35"><td class="memItemLeft" align="right" valign="top">QUdpSocket *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3e5efe8b0ee07f060ed694854a15b35">receivEsocket</a></td></tr>
+<tr class="memdesc:ad3e5efe8b0ee07f060ed694854a15b35"><td class="mdescLeft">&#160;</td><td class="mdescRight">Указатель на объект сокета для получения данных  <br /></td></tr>
+<tr class="separator:ad3e5efe8b0ee07f060ed694854a15b35"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5575b3a3b7c91087ce417ac111f13bf" id="r_ae5575b3a3b7c91087ce417ac111f13bf"><td class="memItemLeft" align="right" valign="top">QHostAddress&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae5575b3a3b7c91087ce417ac111f13bf">ipaddress</a></td></tr>
+<tr class="memdesc:ae5575b3a3b7c91087ce417ac111f13bf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная для хранения значения IP адреса который используется для BIND приемного сокета  <br /></td></tr>
+<tr class="separator:ae5575b3a3b7c91087ce417ac111f13bf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e33c0892a7b9ec9bec07680889e0fee" id="r_a8e33c0892a7b9ec9bec07680889e0fee"><td class="memItemLeft" align="right" valign="top">QHostAddress&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8e33c0892a7b9ec9bec07680889e0fee">ipremaddress</a></td></tr>
+<tr class="memdesc:a8e33c0892a7b9ec9bec07680889e0fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная для хранения значения IP адреса на который выполняется передача пакетов по умолчанию  <br /></td></tr>
+<tr class="separator:a8e33c0892a7b9ec9bec07680889e0fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a04454137d03b72d96f9451218ec6d394" id="r_a04454137d03b72d96f9451218ec6d394"><td class="memItemLeft" align="right" valign="top">QHostAddress&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04454137d03b72d96f9451218ec6d394">multicastIp</a></td></tr>
+<tr class="memdesc:a04454137d03b72d96f9451218ec6d394"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная для хранения значения multicast IP адреса который используется для приема данных из multicast группы  <br /></td></tr>
+<tr class="separator:a04454137d03b72d96f9451218ec6d394"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad0dad9e942dc3e890fdfaeb8323a7ed2" id="r_ad0dad9e942dc3e890fdfaeb8323a7ed2"><td class="memItemLeft" align="right" valign="top">quint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad0dad9e942dc3e890fdfaeb8323a7ed2">lport</a></td></tr>
+<tr class="memdesc:ad0dad9e942dc3e890fdfaeb8323a7ed2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная для хранения значения порта который используется для приема данных  <br /></td></tr>
+<tr class="separator:ad0dad9e942dc3e890fdfaeb8323a7ed2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3b30264fa6ca169f224183b1f1424327" id="r_a3b30264fa6ca169f224183b1f1424327"><td class="memItemLeft" align="right" valign="top">quint16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b30264fa6ca169f224183b1f1424327">remport</a></td></tr>
+<tr class="memdesc:a3b30264fa6ca169f224183b1f1424327"><td class="mdescLeft">&#160;</td><td class="mdescRight">Переменная для хранения значения порта на который выполняется передача пакетов по умолчанию  <br /></td></tr>
+<tr class="separator:a3b30264fa6ca169f224183b1f1424327"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Основной класс реализующий UDP сокет с возможностью приема данных из multicast группы. </p>
@@ -188,7 +229,100 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>multirec</b></td></tr
 
 </div>
 </div>
+<a id="a8e7bc6feb321bc3dcf5c02c5655b071a" name="a8e7bc6feb321bc3dcf5c02c5655b071a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e7bc6feb321bc3dcf5c02c5655b071a">&#9670;&#160;</a></span>~Udp_sock()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Udp_sock::~Udp_sock </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a423c0cbc72ee46ceef0a984bd1b0241b" name="a423c0cbc72ee46ceef0a984bd1b0241b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a423c0cbc72ee46ceef0a984bd1b0241b">&#9670;&#160;</a></span>dataIncome <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Udp_sock::dataIncome </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QHostAddress</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint16</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2bab75428813fa9e8defe24f605310b" name="ac2bab75428813fa9e8defe24f605310b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2bab75428813fa9e8defe24f605310b">&#9670;&#160;</a></span>dataIncome <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Udp_sock::dataIncome </td>
+          <td>(</td>
+          <td class="paramtype">QByteArray</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">QString</td>          <td class="paramname"><span class="paramname"><em></em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">quint16</td>          <td class="paramname"><span class="paramname"><em></em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">signal</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="a5c26e877d34512b84bcaeed69be152fb" name="a5c26e877d34512b84bcaeed69be152fb"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a5c26e877d34512b84bcaeed69be152fb">&#9670;&#160;</a></span>drop()</h2>
 
@@ -204,6 +338,79 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>multirec</b></td></tr
       </table>
 </div><div class="memdoc">
 <p>Остановить работающий сокет не прибегая к деструктору для смены параметров </p><dl class="section warning"><dt>Warning</dt><dd>состояние mulicast on/off сохраняется </dd></dl>
+
+</div>
+</div>
+<a id="adfb4d625118e23260a151e794e15b7a0" name="adfb4d625118e23260a151e794e15b7a0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adfb4d625118e23260a151e794e15b7a0">&#9670;&#160;</a></span>multicastSet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Udp_sock::multicastSet </td>
+          <td>(</td>
+          <td class="paramtype">QHostAddress</td>          <td class="paramname"><span class="paramname"><em>multicIp</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>turnOn</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Установка режима multicast </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">multicIp</td><td>{значение multicast адреса </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section warning"><dt>Warning</dt><dd>предусмотрена проверка диаппазона адреса} </dd></dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">turnOn</td><td>{включение режима multicast} </td></tr>
+  </table>
+  </dd>
+</dl>
+<p>if IPv4Protocol</p>
+<p>foreach</p>
+<p>if flags <br  />
+</p>
+<p>foreach</p>
+
+</div>
+</div>
+<a id="a108afd4191c081856d9073ddee799130" name="a108afd4191c081856d9073ddee799130"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a108afd4191c081856d9073ddee799130">&#9670;&#160;</a></span>reading</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Udp_sock::reading </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Чтение данных из UDP сокета - вызывает - emit dataIncome(... </p>
 
 </div>
 </div>
@@ -316,7 +523,202 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>multirec</b></td></tr
 
 </div>
 </div>
+<a id="a86558a0d1db5154e769b8899adcb1f0c" name="a86558a0d1db5154e769b8899adcb1f0c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a86558a0d1db5154e769b8899adcb1f0c">&#9670;&#160;</a></span>sockConnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Udp_sock::sockConnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Индикация при сигнале сокета - connected() </p><dl class="section warning"><dt>Warning</dt><dd>для тестирования </dd></dl>
+
+</div>
+</div>
+<a id="a45c05c44d41bffe2cf46d1b2d59d079a" name="a45c05c44d41bffe2cf46d1b2d59d079a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a45c05c44d41bffe2cf46d1b2d59d079a">&#9670;&#160;</a></span>sockDisconnected</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Udp_sock::sockDisconnected </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Индикация при сигнале сокета - disconnected() </p><dl class="section warning"><dt>Warning</dt><dd>для тестирования </dd></dl>
+
+</div>
+</div>
+<a id="a1ad4a62fb50292fd1317b088eb708b20" name="a1ad4a62fb50292fd1317b088eb708b20"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ad4a62fb50292fd1317b088eb708b20">&#9670;&#160;</a></span>socketSayError</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void Udp_sock::socketSayError </td>
+          <td>(</td>
+          <td class="paramtype">QAbstractSocket::SocketError</td>          <td class="paramname"><span class="paramname"><em>err</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span><span class="mlabel">slot</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<p>Индикация ошибок предусмотренных классом QUdpSocket </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">err</td><td>{код ошибки} </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Member Data Documentation</h2>
+<a id="a92028f7238a9a0d2299a1905c461305e" name="a92028f7238a9a0d2299a1905c461305e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92028f7238a9a0d2299a1905c461305e">&#9670;&#160;</a></span>bindresult</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Udp_sock::bindresult</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Переменная, отражающая значение успешно ли выполнен BIND приемного сокета после конструктора </p>
+
+</div>
+</div>
+<a id="ae5575b3a3b7c91087ce417ac111f13bf" name="ae5575b3a3b7c91087ce417ac111f13bf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5575b3a3b7c91087ce417ac111f13bf">&#9670;&#160;</a></span>ipaddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHostAddress Udp_sock::ipaddress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переменная для хранения значения IP адреса который используется для BIND приемного сокета </p>
+
+</div>
+</div>
+<a id="a8e33c0892a7b9ec9bec07680889e0fee" name="a8e33c0892a7b9ec9bec07680889e0fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e33c0892a7b9ec9bec07680889e0fee">&#9670;&#160;</a></span>ipremaddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHostAddress Udp_sock::ipremaddress</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переменная для хранения значения IP адреса на который выполняется передача пакетов по умолчанию </p>
+
+</div>
+</div>
+<a id="ad0dad9e942dc3e890fdfaeb8323a7ed2" name="ad0dad9e942dc3e890fdfaeb8323a7ed2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad0dad9e942dc3e890fdfaeb8323a7ed2">&#9670;&#160;</a></span>lport</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint16 Udp_sock::lport</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переменная для хранения значения порта который используется для приема данных </p>
+
+</div>
+</div>
+<a id="a04454137d03b72d96f9451218ec6d394" name="a04454137d03b72d96f9451218ec6d394"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a04454137d03b72d96f9451218ec6d394">&#9670;&#160;</a></span>multicastIp</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QHostAddress Udp_sock::multicastIp</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переменная для хранения значения multicast IP адреса который используется для приема данных из multicast группы </p>
+
+</div>
+</div>
 <a id="afe6e51a73c273c7c1bccfa731dc1970c" name="afe6e51a73c273c7c1bccfa731dc1970c"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afe6e51a73c273c7c1bccfa731dc1970c">&#9670;&#160;</a></span>multicount</h2>
 
@@ -331,6 +733,94 @@ bool&#160;</td><td class="memItemRight" valign="bottom"><b>multirec</b></td></tr
 
 <p>Переменная, для индикации колличества multicast групп в которых состоит сокет </p>
 <dl class="section warning"><dt>Warning</dt><dd>контролировать!! по идее сокет должен быть только в одной группе. </dd></dl>
+
+</div>
+</div>
+<a id="aad0e2c302d3967e55220ff3ee207e917" name="aad0e2c302d3967e55220ff3ee207e917"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aad0e2c302d3967e55220ff3ee207e917">&#9670;&#160;</a></span>multirec</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool Udp_sock::multirec</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Переменная, для индикации включения режима multicast. </p>
+
+</div>
+</div>
+<a id="ad3e5efe8b0ee07f060ed694854a15b35" name="ad3e5efe8b0ee07f060ed694854a15b35"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3e5efe8b0ee07f060ed694854a15b35">&#9670;&#160;</a></span>receivEsocket</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QUdpSocket* Udp_sock::receivEsocket</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Указатель на объект сокета для получения данных </p>
+
+</div>
+</div>
+<a id="a3b30264fa6ca169f224183b1f1424327" name="a3b30264fa6ca169f224183b1f1424327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b30264fa6ca169f224183b1f1424327">&#9670;&#160;</a></span>remport</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">quint16 Udp_sock::remport</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Переменная для хранения значения порта на который выполняется передача пакетов по умолчанию </p>
+
+</div>
+</div>
+<a id="a4c8f63177671d90fbd7ff82c581e32fd" name="a4c8f63177671d90fbd7ff82c581e32fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c8f63177671d90fbd7ff82c581e32fd">&#9670;&#160;</a></span>USoc</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">QUdpSocket* Udp_sock::USoc</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Указатель на объект сокета для отправки </p>
 
 </div>
 </div>

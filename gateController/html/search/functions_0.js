@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['drop_0',['drop',['../class_udp__sock.html#a5c26e877d34512b84bcaeed69be152fb',1,'Udp_sock']]]
+  ['askgatestay_0',['askGateStay',['../classvisual.html#a20967dd2b9e05bb531ab83a2f5bc8c75',1,'visual']]]
 ];

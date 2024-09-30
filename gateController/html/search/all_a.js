@@ -1,8 +1,11 @@
 var searchData=
 [
-  ['udp_20socket_0',['There native gate controller with async mode commander unit via UDP Socket',['../index.html',1,'']]],
-  ['udp_5fsock_1',['Udp_sock',['../class_udp__sock.html',1,'Udp_sock'],['../class_udp__sock.html#ab04e55ac971f3dcc9dfec825d41ec568',1,'Udp_sock::Udp_sock()']]],
-  ['udpv2_2ecpp_2',['udpV2.cpp',['../udp_v2_8cpp.html',1,'']]],
-  ['udpv2_2eh_3',['udpV2.h',['../udp_v2_8h.html',1,'']]],
-  ['unit_20via_20udp_20socket_4',['There native gate controller with async mode commander unit via UDP Socket',['../index.html',1,'']]]
+  ['readdata_0',['readData',['../classvisual.html#adcf87ad6024b59284a19178fc9b2e97d',1,'visual']]],
+  ['reading_1',['reading',['../class_udp__sock.html#a108afd4191c081856d9073ddee799130',1,'Udp_sock']]],
+  ['readme_2emd_2',['readme.md',['../readme_8md.html',1,'']]],
+  ['receivesocket_3',['receivEsocket',['../class_udp__sock.html#ad3e5efe8b0ee07f060ed694854a15b35',1,'Udp_sock']]],
+  ['remip_4',['remIp',['../classvisual.html#ae978595f0b0dc44a5f4afc2722b15289',1,'visual']]],
+  ['remport_5',['remPort',['../classvisual.html#a60eebb6b238a27d2c3e147a2c23d3d28',1,'visual']]],
+  ['remport_6',['remport',['../class_udp__sock.html#a3b30264fa6ca169f224183b1f1424327',1,'Udp_sock']]],
+  ['rise_7',['rise',['../class_udp__sock.html#aff0d9024ce029cb9ec0b4891d6a67df5',1,'Udp_sock']]]
 ];
